@@ -1,1 +1,2 @@
-import './scenes/game';
+import Api from './getKeys';
+Api.getGameId();

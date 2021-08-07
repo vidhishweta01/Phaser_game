@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
-export const gameConfig = {
+
+const gameConfig = {
   type: Phaser.AUTO,
   width: 1848,
   height: 1019,
@@ -14,5 +15,7 @@ export const gameConfig = {
           debug: false
       }
   },
-  
+  user: '',
 };
+
+export default gameConfig;

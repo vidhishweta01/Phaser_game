@@ -1,31 +1,54 @@
 import Phaser from 'phaser';
-  let player;
-  let stars;
-  let bombs;
-  let platforms;
-  let cursors;
-  let score = 0;
-  let gameOver = false;
-  let scoreText;
-  export const score = {
-    user: gameConfig.user,
-    score: 0,
-  };
+let player;
+let stars;
+let bombs;
+let platforms;
+let cursors;
+let score = 0;
+let gameOver = false;
+let scoreText;
+export const score = {
+  user: gameConfig.user,
+  score: 0,
+};
 
-  function preload ()
-  {
-    this.load.audio('bgMusic', ['assets/GameMusic.wav']);
-    this.load.audio('coinSound', ['assets/coins.wav']);
-      this.load.audio('deathSound', ['assets/deathSound.png']);
-    this.load.image('sky1', 'assets/sky1.jpeg');
-    this.load.image('ground', 'assets/br.png');
-    this.load.image('star', 'assets/coins.png');
-    this.load.image('bomb', 'assets/bomb1.gif');
-    this.load.spritesheet('dude', 'assets/dude3.png', { frameWidth: 77, frameHeight: 100 });
-    this.load.spritesheet('playerDeath', 'assets/death.png', { frameWidth: 133, frameHeight: 84 });    
-  }
+function collectStar(player, coin) {
+  coin.disableBody(true, true);
+  this.coinSound = this.sound.add('coinSound', { loop: false });
+  this.coinSound.play();
   
-  function create ()
+  score.score += 10;
+  scoreText.setText(`SCORE: ${score.score}`);
+  
+  if (coins.countActive(true) === 0) {
+    coins.children.iterate((child) => {
+      child.enableBody(true, child.x, 0, true, true);
+    });
+  
+    const x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
+  
+    const bomb = bombs.create(x, 16, 'bomb');
+    bomb.setScale(0.25);
+    bomb.setBounce(1);
+    bomb.setCollideWorldBounds(true);
+    bomb.setVelocity(Phaser.Math.Between(200, 800), 50);
+    bomb.allowGravity = false;
+  }
+}
+  
+function hitBomb(player) {
+  this.physics.pause();
+  
+  player.setTint(0xff0000);
+  player.anims.play('death');
+  this.deathSound = this.sound.add('deathSound', { loop: false });
+  this.deathSound.play();
+  
+  gameOver = true;
+}  
+
+export default class Game extends Phaser.Scene {
+   create ()
   {
     //  A simple background for our game
     this.add.image(400, 300, 'sky1');
@@ -114,7 +137,7 @@ import Phaser from 'phaser';
     this.physics.add.collider(player, bombs, hitBomb, null, this);
   }
   
-  function update ()
+ update ()
   {
     if (gameOver)
     {
@@ -146,45 +169,6 @@ import Phaser from 'phaser';
     }
   }
   
-  function collectStar (player, star)
-  {
-    star.disableBody(true, true);
-    this.coinSound = this.sound.add('coinSound', { loop: false });
-    this.coinSound.play();
-    //  Add and update the score
-    score += 10;
-    scoreText.setText(`Score: ${score.score}`);
+}
   
-    if (stars.countActive(true) === 0)
-    {
-        //  A new batch of stars to collect
-        stars.children.iterate(function (child) {
-  
-            child.enableBody(true, child.x, 0, true, true);
-  
-        });
-  
-        var x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
-  
-        var bomb = bombs.create(x, 16, 'bomb');
-        bomb.setBounce(1);
-        bomb.setCollideWorldBounds(true);
-        bomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
-        bomb.allowGravity = false;
-  
-    }
-  }
-  
-  function hitBomb (player, bomb)
-  {
-    this.physics.pause();
-  
-    player.setTint(0xff0000);
-  
-    player.anims.play('death');
-    this.deathSound = this.sound.add('deathSound', { loop: false });
-    this.deathSound.play();
-  
-    gameOver = true;
-  }
   
