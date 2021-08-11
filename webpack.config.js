@@ -1,14 +1,15 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
+
 module.exports = {
   entry: {
-    app: './src/index.js'
+    app: './src/index.js',
   },
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'main.js'
+    filename: 'main.js',
   },
   module: {
     rules: [
@@ -55,15 +56,15 @@ module.exports = {
 // const webpack = require('webpack');
 
 // module.exports = {
-  // entry: {
-  //   app: './src/index.js',
-  //   'production-dependencies': ['phaser']
-  // },
+// entry: {
+//   app: './src/index.js',
+//   'production-dependencies': ['phaser']
+// },
 
-  // output: {
-  //   path: path.resolve(__dirname, 'build'),
-  //   filename: 'app.bundle.js'
-  // },
+// output: {
+//   path: path.resolve(__dirname, 'build'),
+//   filename: 'app.bundle.js'
+// },
 
 //   module: {
 //     rules: [

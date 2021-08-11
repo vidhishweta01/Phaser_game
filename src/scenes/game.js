@@ -104,13 +104,13 @@ export default class GameSc extends Phaser.Scene {
     this.physics.add.collider(stars, platforms);
     this.physics.add.collider(bombs, platforms);
 
-    //  Checks to see if the player overlaps with any of the stars, if he does call the collectStar function
     this.physics.add.overlap(player, stars, this.collectStar, null, this);
 
     this.physics.add.collider(player, bombs, this.hitBomb, null, this);
   }
 
   update() {
+    this.velocity = -330;
     if (gameOver) {
       return;
     }
@@ -130,7 +130,7 @@ export default class GameSc extends Phaser.Scene {
     }
 
     if (cursors.up.isDown && player.body.touching.down) {
-      player.setVelocityY(-330);
+      player.setVelocityY(this.velocity);
     }
   }
 
