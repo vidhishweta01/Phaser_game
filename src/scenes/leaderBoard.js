@@ -37,13 +37,13 @@ export default class leaderBoardScene extends Phaser.Scene {
     this.gameButton = new Button(this, config.width / 2, 100, 'button', 'button2', 'Home', 'Title');
     console.log(this.scores);
     console.log('dom');
-    let x = 264;
+    let x = 300;
     let sortedscore = _.sortBy(this.scores,'score');
     console.log(sortedscore);
     sortedscore.forEach((item) => {
-      this.add.text(config.width / 2, config.height / 2 + x, `${item.user}`, { fontSize: '42px', fill: '#fff' });
-      this.add.text(config.width / 2, config.height / 2 + x + 40, `SCORE: ${item.score}`, { fontSize: '42px', fill: '#fff' });
-      x -= 88;
+      this.add.text(config.width / 2 - 150, config.height / 2 + x, `${item.user}`, { fontSize: '42px', fill: '#fff' });
+      this.add.text(config.width / 2 - 150, config.height / 2 + x + 50, `SCORE: ${item.score}`, { fontSize: '42px', fill: '#fff' });
+      x -= 100;
       this.placement += 50;
     });
   }
