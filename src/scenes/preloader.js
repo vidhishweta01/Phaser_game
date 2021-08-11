@@ -1,17 +1,17 @@
-//function preload ()
-  //{
-    // this.load.audio('bgMusic', ['assets/GameMusic.wav']);
-    // this.load.audio('coinSound', ['assets/coins.wav']);
-    // this.load.audio('deathSound', ['assets/deathSound.png']);
-    // this.load.image('sky1', 'assets/sky1.jpeg');
-    // this.load.image('ground', 'assets/br.png');
-    // this.load.image('star', 'assets/coins.png');
-    // this.load.image('bomb', 'assets/bomb1.gif');
-    // this.load.spritesheet('dude', 'assets/dude3.png', { frameWidth: 77, frameHeight: 100 });
-    // this.load.spritesheet('playerDeath', 'assets/death.png', { frameWidth: 133, frameHeight: 84 });    
-  //}
+// function preload ()
+// {
+// this.load.audio('bgMusic', ['assets/GameMusic.wav']);
+// this.load.audio('coinSound', ['assets/coins.wav']);
+// this.load.audio('deathSound', ['assets/deathSound.png']);
+// this.load.image('sky1', 'assets/sky1.jpeg');
+// this.load.image('ground', 'assets/br.png');
+// this.load.image('star', 'assets/coins.png');
+// this.load.image('bomb', 'assets/bomb1.gif');
+// this.load.spritesheet('dude', 'assets/dude3.png', { frameWidth: 77, frameHeight: 100 });
+// this.load.spritesheet('playerDeath', 'assets/death.png', { frameWidth: 133, frameHeight: 84 });
+// }
 
-  import Phaser from 'phaser';
+import Phaser from 'phaser';
 
 export default class PreloaderScene extends Phaser.Scene {
   constructor() {
@@ -94,7 +94,7 @@ export default class PreloaderScene extends Phaser.Scene {
 
     // load assets needed in our game
     this.load.image('button', 'assets/button.png');
-    this.load.image('button1', 'assets/button1.png');
+    this.load.image('button1', 'assets/button2.png');
     this.load.image('phaserLogo', 'assets/logo.png');
     this.load.image('box', 'assets/greybox.png');
     this.load.image('checkbox', 'assets/checkbox.png');
@@ -102,15 +102,14 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.audio('deathSound', ['assets/deathSound.wav']);
     this.load.audio('coinSound', ['assets/coins.wav']);
 
-    this.load.html('nameForm', 'assets/nameForm.html');
+    this.load.html('nameForm', 'assets/form.html');
 
-    this.load.image('sky', 'assets/BG/sky1.jpeg');
+    this.load.image('sky', 'assets/sky1.jpeg');
     this.load.image('ground', 'assets/br.png');
-    this.load.image('star', 'assets/coin.png');
+    this.load.image('star', 'assets/coins.png');
     this.load.image('bomb', 'assets/bomb1.gif');
-    
+
     this.load.spritesheet('dude', 'assets/dude3.png', { frameWidth: 77, frameHeight: 100 });
-    this.load.spritesheet('playerDeath', 'assets/death.png', { frameWidth: 133, frameHeight: 84 });
   }
 
   ready() {

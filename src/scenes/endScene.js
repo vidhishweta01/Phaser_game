@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
 import gameConfig from '../config/config';
 // eslint-disable-next-line import/no-cycle
-import { score } from './GameScene';
+import { score } from './game';
 
 export default class endScene extends Phaser.Scene {
   constructor() {
@@ -10,19 +10,22 @@ export default class endScene extends Phaser.Scene {
 
   create() {
     const postScore = (score) => {
-      const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/7igtBCocAtE2Il7lPcAc/scores';
+      const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/wFMA4yliEBsVkDHCw7Xx/scores';
       fetch(url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(score),
+        body: JSON.stringify({
+          user: gameConfig.user,
+          score,
+        }),
       }).then((response) => response.json())
         .catch((error) => {
           throw new Error('Error:', error);
         });
     };
-    postScore(score);
+    postScore(score.score);
 
     this.add.text(gameConfig.width / 2, gameConfig.height / 2, `${gameConfig.user}`, { fontSize: '42px', fill: '#fff' });
     this.add.text(gameConfig.width / 2, gameConfig.height / 2 + 40, `SCORE: ${score.score}`, { fontSize: '42px', fill: '#fff' });

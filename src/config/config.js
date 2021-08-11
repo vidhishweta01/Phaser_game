@@ -9,11 +9,11 @@ const gameConfig = {
     createContainer: true,
   },
   physics: {
-      default: 'arcade',
-      arcade: {
-          gravity: { y: 300 },
-          debug: false
-      }
+    default: 'arcade',
+    arcade: {
+      gravity: { y: 300 },
+      debug: false,
+    },
   },
   user: '',
 };

@@ -1,34 +1,51 @@
 {
-  "name": "phaser3-webpack-es6-dev-starter",
+  "name": "Phaser_game",
   "version": "1.0.0",
-  "description": "A project starter for developing Phaser 3 games using Webpack and ES6.",
+  "description": "A project for developing Phaser 3 games using Webpack and ES6.",
   "main": "src/index.js",
   "scripts": {
-    "test": "jest",
-    "build": "webpack --config webpack/prod.js ",
-    "start": "webpack-dev-server --config webpack/base.js --open"
+    "start": "webpack serve --mode development --entry ./src/index.js",
+    "build": "webpack --mode development --entry ./src/index.js --output ./build/app.bundle.js",
+    "dev": "webpack --mode development --entry ./src/index.js --output ./build/app.bundle.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/snowbillr/phaser3-webpack-es6-dev-starter.git"
+    "url": "git+https://github.com/vidhishweta01/Phaser_game.git"
   },
-  "author": "Bill Reed",
+  "author": "Shweta Srivastava",
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "babel-core": "6",
-    "babel-loader": "^7.0.0",
-    "babel-preset-env": "^1.0.0",
-    "copy-webpack-plugin": "^4.5.1",
-    "raw-loader": "^0.5.1",
-    "webpack": "^3.0.0",
-    "webpack-dev-server": "^2.0.0"
+    "@babel/core": "^7.15.0",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/plugin-transform-modules-commonjs": "^7.15.0",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^9.0.1",
+    "css-loader": "^6.2.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.0",
+    "file-loader": "^6.2.0",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.2.0",
+    "raw-loader": "^4.0.2",
+    "stylelint-config-standard": "^22.0.0",
+    "webpack": "^5.49.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "phaser": "^3.0.0"
+    "lodash": "^1.0.0",
+    "node-fetch": "^2.6.1",
+    "phaser": "^3.55.2"
   },
   "bugs": {
-    "url": "https://github.com/snowbillr/phaser3-webpack-es6-dev-starter/issues"
+    "url": "https://github.com/vidhishweta01/Phaser_game/issues"
   },
-  "homepage": "https://github.com/snowbillr/phaser3-webpack-es6-dev-starter#readme"
+  "homepage": "https://github.com/vidhishweta01/Phaser_game#readme",
+  "keywords": []
 }

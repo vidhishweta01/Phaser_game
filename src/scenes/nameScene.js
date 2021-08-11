@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import gameConfig from '../Config/config';
+import gameConfig from '../config/config';
 
 export default class LoginScene extends Phaser.Scene {
   constructor() {
