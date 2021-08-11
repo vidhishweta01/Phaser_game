@@ -4,7 +4,7 @@ Its a coin collecting game, where runner runs on varied platforms to collect coi
 
 ![Screenshot](./screenshots/Screenshot1.png)
 
-![Screenshot](./screenshots/Screenshot1.png)
+![Screenshot](./screenshots/Screenshot2.png)
 
 
 
