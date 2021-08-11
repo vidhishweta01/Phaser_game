@@ -27,6 +27,7 @@ export default class GameSc extends Phaser.Scene {
     this.load.image('ground', ground);
     this.load.image('star', star);
     this.load.image('bomb', bomb);
+    this.load.audio('coinSound', ['assets/coins.wav']);
     this.load.spritesheet('dude', '../assets/dude3.png', { frameWidth: 77, frameHeight: 100 });
   }
 
@@ -135,7 +136,8 @@ export default class GameSc extends Phaser.Scene {
 
   collectStar(player, star) {
     star.disableBody(true, true);
-
+    this.coinSound = this.sound.add('coinSound', { loop: false });
+    this.coinSound.play();
     //  Add and update the score
     score.score += 10;
     scoreText.setText(`SCORE: ${score.score}`);

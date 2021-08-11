@@ -3,7 +3,7 @@ import Phaser from 'phaser';
 const gameConfig = {
   type: Phaser.AUTO,
   width: 1848,
-  height: 1019,
+  height: 1024,
   parent: 'canvas',
   dom: {
     createContainer: true,
