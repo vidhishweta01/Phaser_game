@@ -1,14 +1,20 @@
 import Phaser from 'phaser';
 import config from '../config/config';
 import Button from '../object/button';
+import back from '../assets/back.png';
 
 export default class TitleScene extends Phaser.Scene {
   constructor() {
     super('Title');
   }
 
+  preload() {
+    this.load.image('back', back);
+  }
+
   create() {
     // Game
+    this.add.image(config.width / 2, config.height / 2, 'back');
     this.gameButton = new Button(this, config.width / 2, config.height / 2 - 100, 'button', 'button1', 'Play', 'Name');
 
     // Leaderboard

@@ -1,16 +1,3 @@
-// function preload ()
-// {
-// this.load.audio('bgMusic', ['assets/GameMusic.wav']);
-// this.load.audio('coinSound', ['assets/coins.wav']);
-// this.load.audio('deathSound', ['assets/deathSound.png']);
-// this.load.image('sky1', 'assets/sky1.jpeg');
-// this.load.image('ground', 'assets/br.png');
-// this.load.image('star', 'assets/coins.png');
-// this.load.image('bomb', 'assets/bomb1.gif');
-// this.load.spritesheet('dude', 'assets/dude3.png', { frameWidth: 77, frameHeight: 100 });
-// this.load.spritesheet('playerDeath', 'assets/death.png', { frameWidth: 133, frameHeight: 84 });
-// }
-
 import Phaser from 'phaser';
 
 export default class PreloaderScene extends Phaser.Scene {
