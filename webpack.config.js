@@ -1,8 +1,15 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-
+const path = require('path');
 module.exports = {
+  entry: {
+    app: './src/index.js'
+  },
+
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'main.js'
+  },
   module: {
     rules: [
       {
@@ -32,10 +39,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-      filename: './index.html',
-    }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css',
@@ -47,20 +50,20 @@ module.exports = {
     }),
   ],
 };
-// const path = require('path');
+
 // const CopyWebpackPlugin = require('copy-webpack-plugin');
 // const webpack = require('webpack');
 
 // module.exports = {
-//   entry: {
-//     app: './src/index.js',
-//     'production-dependencies': ['phaser']
-//   },
+  // entry: {
+  //   app: './src/index.js',
+  //   'production-dependencies': ['phaser']
+  // },
 
-//   output: {
-//     path: path.resolve(__dirname, 'build'),
-//     filename: 'app.bundle.js'
-//   },
+  // output: {
+  //   path: path.resolve(__dirname, 'build'),
+  //   filename: 'app.bundle.js'
+  // },
 
 //   module: {
 //     rules: [
