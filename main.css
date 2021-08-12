@@ -2,17 +2,18 @@
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/style.css ***!
   \*****************************************************************/
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: content-box;
-  }
-  
-  body {
-    background-color: #000;
-    overflow: hidden;
-  }
-  
-  canvas {
-    width: 100%;
-    max-height: 100vh;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+body {
+  background-color: #000;
+  overflow: hidden;
+}
+
+canvas {
+  width: 100%;
+  max-height: 100vh;
+}
+
