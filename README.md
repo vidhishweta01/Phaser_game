@@ -2,6 +2,11 @@
 
 Its a coin collecting game, where runner runs on varied platforms to collect coins and avoid bomb for survival in project.
 
+## live link
+
+https://vidhishweta01.github.io/Phaser_game/
+
+
 ![Screenshot](./screenshots/Screenshot1.png)
 
 ![Screenshot](./screenshots/Screenshot2.png)
