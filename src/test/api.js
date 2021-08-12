@@ -1,18 +1,21 @@
-const postScore = (score) => {
+const fetch = require("node-fetch");
+const postScore = async(score) => {
   const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/wFMA4yliEBsVkDHCw7Xx/scores';
-  fetch(url, {
+  const res = await fetch(url , {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      user: gameConfig.user,
-      score,
+      user: "Demo",
+      score: score,
     }),
-  }).then((response) => response.json())
-    .catch((error) => {
+  }).
+  then((response) => response.json())
+  .catch((error) => {
       throw new Error('Error:', error);
     });
+  return res;
 };
 
 const getScore = () => {
@@ -24,8 +27,8 @@ const getScore = () => {
     },
   }).then((response) => response.json())
     .then((data) => {
-      return data.result;
-    })
+      const z = data.result;
+    } )
     .catch((error) => {
       throw new Error('Error:', error);
     });
