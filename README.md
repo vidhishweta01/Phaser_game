@@ -1,6 +1,7 @@
 # Phaser_Game
 
 Its a coin collecting game, where runner runs on varied platforms to collect coins and avoid bomb for survival in project.
+To play the game, use arrow keys to move left right or jump up.
 
 ## live link
 
