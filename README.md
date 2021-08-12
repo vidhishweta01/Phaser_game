@@ -1,27 +1,56 @@
-# Development set up for Phaser 3, Webpack, and ES6.
+# Phaser_Game
 
-This is the final version of the project we create in https://snowbillr.github.io/blog/2018-04-09-a-modern-web-development-setup-for-phaser-3/.
+Its a coin collecting game, where runner runs on varied platforms to collect coins and avoid bomb for survival in project.
+To play the game, use arrow keys to move left right or jump up.
 
-For a guide on the concepts included in this project and how to build it from scratch, take a look at [the blog post](https://snowbillr.github.io/blog/2018-04-09-a-modern-web-development-setup-for-phaser-3/).
+## live link
+
+https://vidhishweta01.github.io/Phaser_game/
+
+
+![Screenshot](./screenshots/Screenshot1.png)
+
+![Screenshot](./screenshots/Screenshot2.png)
+
+## Built With
+
+1. javascript
+1. phaser 3
+1. ES6
+
 
 ## Using This Project
 
 1. Make a directory somewhere in your file system where you want to keep your project.
 1. `cd` into that directory from the command line.
-1. Clone this project with `git clone https://github.com/snowbillr/phaser3-webpack-es6-dev-starter.git`.
+1. Clone this project with `git clone https://github.com/vidhishweta01/Phaser_game.git`.
 
 ## Installing Dependencies
 
-1. Follow the blog post for instructions on how to install [Yarn](https://yarnpkg.com/en/) if you don't already have it installed.
-1. From the cloned project's directory, run `yarn install`.
+1. From the cloned project's directory, run `npm run install`.
 
 ## Running The Project
 
-Once you've installed the project's dependencies, you can run the project using [Webpack Dev Server](https://github.com/webpack/webpack-dev-server).
+Once you've installed the project's dependencies, you can run the project using `npm run start`.
 
-1. From your project's directory, run `yarn webpack-dev-server`.
 1. Open up your browser to `http://localhost:8080`.
-1. You should see a web page with a black box that says "Hello Phaser!" in green text. That's our game!
-1. :tada:
 
-Because you are running the project through Webpack Dev Server, any time you make a change to your source code, the browser will automatically refresh with your updated code.
+1. Builds code bundle with production settings `npm run build`.
+
+## Authors 👤
+
+### Shweta Srivastava
+
+_[Github](https://github.com/vidhishweta01)
+
+_[LinkedIn](http://linkedin.com/in/shweta-s-15a57070)
+
+## Show your support ⭐️⭐️
+
+Give a star if you like this project!
+
+## License 📝
+
+This project is [MIT](https://www.mit.edu/~amini/LICENSE.md) licensed.
+
+
