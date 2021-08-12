@@ -38,6 +38,7 @@ export default class leaderBoardScene extends Phaser.Scene {
     let len = sortedscore.length - 1;
     let count = 0;
     while (len > 0) {
+      this.add.text(config.width / 2 - 200, config.height / 2 - 60, 'Top 5 Runners', { fontSize: '42px', fill: '#fff' });
       this.add.text(config.width / 2 - 200, config.height / 2 + x, `${sortedscore[len].user} SCORE: ${sortedscore[len].score}`, { fontSize: '42px', fill: '#fff' });
       x += 60;
       this.placement += 50;
