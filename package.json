@@ -4,6 +4,7 @@
   "description": "A project for developing Phaser 3 games using Webpack and ES6.",
   "main": "src/index.js",
   "scripts": {
+    "test": "jest",
     "start": "webpack serve --mode development --entry ./src/index.js",
     "build": "webpack --mode development --entry ./src/index.js ",
     "dev": "webpack --mode development --entry ./src/index.js "
